@@ -129,5 +129,8 @@ classdef Net < handle
       CHECK(ischar(weights_file), 'weights_file must be a string');
       caffe_('net_save', self.hNet_self, weights_file);
     end
+    function set_input_dim(self, dim)
+        caffe_('set_input_dim', self.hNet_self, dim);
+    end
   end
 end
